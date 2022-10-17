@@ -1,0 +1,23 @@
+/*universal*/
+body{
+    padding: 30px;
+}
+@font-face {
+    font-family: Basteleur-Bold;
+    src: url("assets/fonts/basteleur-master/fonts/webfonts/Basteleur-Bold.woff");
+}
+@font-face {
+    font-family: YoungSerif;
+    src: url("assets/fonts/YoungSerif/fonts/webfonts/YoungSerif-Regular.woff");
+}
+h1{
+    font-family: Basteleur-Bold;
+}
+/*mobile*/
+@media screen and (max-width: 768px) {
+
+}
+/*desktop*/
+@media screen and (min-width: 768px) {
+
+}
