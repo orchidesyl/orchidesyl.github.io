@@ -12,7 +12,19 @@ body{
 }
 h1{
     font-family: Basteleur-Bold;
+    font-size: 41px;
 }
+h2{
+    font-family: YoungSerif;
+    font-size: 31px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    animation-delay: 5ms;
+}
+
 /*mobile*/
 @media screen and (max-width: 768px) {
 
