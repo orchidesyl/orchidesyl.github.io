@@ -1,0 +1,272 @@
+/*Aah! You found me! How is my code?
+dev@orchidesyl.com */
+
+
+
+body {
+  margin: 0px;
+  transition: .3s;
+  /*border: 1px #120308 solid;*/
+  background-color: #120308;
+  color: #f1bdf5;
+}
+.section {
+  background: inherit;
+}
+#header {
+  position: fixed;
+  width: 100%;
+}
+#header h1 {
+  font-size: 27px;
+  font-weight: regular;
+  font-style: italic;
+  word-wrap: break-word;
+  width: fit-content;
+  cursor: pointer;
+}
+.icons {
+  filter: initial;
+}
+#colophon {
+  cursor: pointer;
+  position: sticky;
+}
+#color-menu {
+  width: 33px;
+  cursor: pointer;
+}
+.color-main {
+  margin: -50px 14px 0px 0px;
+  float: right;
+}
+.color-mode {
+  transition: .3s;
+  /* border: 1px #ddbee9 solid; */
+  background-color: #f1bdf5;
+  color: #120308;;
+}
+.color-mode .icons{
+  filter: invert();
+}
+.color-mode a{
+  color: #909924;
+}
+.navMenu {
+  position: fixed;
+  align-content: flex-end;
+  bottom: 0;
+  font-weight: lighter;
+}
+.button{
+  padding: 3px;
+  font-size: 22px;
+}
+#navButtons {
+  display: grid;
+}
+#footer{
+  margin-top: 14px;
+  font-style: italic;
+}
+#colophon {
+  float: right;
+  width: 59px;
+}
+#main {
+  display: grid;
+  gap: 14px;
+  overflow: hidden;
+}
+.thumbnail {
+  float: initial;
+  width: 100%;
+}
+.caption {
+  margin: 7px;
+}
+#imgWide {
+  width: 100%;
+}
+.imgSeed {
+  width: 100%;
+}
+h5 /*caption*/ {
+  font-size: 14px;
+}
+h4 {
+  font-size: 22px;
+}
+h3 {
+  font-size: 28px;
+}
+h2{
+  font-size: 45px;
+  font-weight: bold;
+}
+div, h1, h2, h3, h4, h5, h6 {
+  font-family: GeistMono;
+}
+p {
+  font-size: 22px;
+}
+a {
+  all: unset;
+  color: #b4c02d;
+}
+button {
+  all: unset;
+  width: fit-content;
+  font-size: 22px;
+}
+
+.show {
+  display: block;
+}
+.button:hover {
+  font-weight: normal;
+  transition: .3s;
+}
+.link{
+  font-weight: bold;
+}
+p, a, button {
+  font-family: Geist;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  transition: .3s;
+}
+.popup.show {
+  transition: .3s;
+}
+.close-btn {
+    position: absolute;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: bold;
+    color: #909924;
+}
+.archivePage{
+  /*overflow: hidden;*/
+}
+.archiveNav{
+  padding: 14px;
+}
+.writeNav, .writePageTitle {
+  text-align: center;
+}
+
+/* load fonts */
+  @font-face {
+      font-family: Geist;
+      src: url("https://orchidesyl.com/assets/type/GeistVF.woff");
+  }
+  @font-face {
+      font-family: GeistMono;
+      src: url("https://orchidesyl.com/assets/type/GeistMonoVF.woff");
+  }
+
+
+
+/*desktop*/
+  @media screen and (min-width: 720px){
+    .navMenu {
+      float: left;
+      height: calc(100vh - 68px);
+      width: 265px;
+      padding: 30px;
+      overflow: auto;
+    }
+    #footer {
+      display: grid;
+    }
+    #header {
+      padding: 14px 0px 7px 14px;
+    }
+    #img-LCap {
+      float: left;
+      width: 33%;
+      margin: 3px 14px -14px 0px;
+    }
+    #img-RCap {
+      float: right;
+      width: 33%;
+      margin: 3px 14px -14px 0px;
+    }
+    #main {
+      margin: 79.4px 0px 0px 326.6px;
+      float: inline-start;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    #imgGarden {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: grid;
+      gap: 14px;
+    }
+    .close-btn {
+      top: 14px;
+      right: 33px;
+    }
+    #showComic {
+      width: calc(100vw - 359px);
+    }
+    .writePageClickable {
+      margin: 14px;  
+    }
+    .popup {
+      
+    }
+    iframe {
+      height: calc(100vh - 124px);
+      width: calc(100vw - 385px);
+      margin: 14px 0px 0px 14px;
+    }
+  }
+
+/*mobile*/
+  @media screen and (max-width: 720px){
+    .navMenu {
+      width: 100%;
+      padding: 3px 0px 24px 14px;
+      overflow: auto;
+      max-height: 33vmax;
+    }
+    #navButtons{
+      float: none;
+      grid-template-columns: auto auto;
+      margin-top: 14px;
+    }
+    #header {
+      text-align: center;
+      padding: 14px 0px 7px 0px;
+    }
+    #colophon {
+      margin-right: 27px;
+    }
+    #main {
+      margin-bottom: 237px;
+      padding-top: 59px;
+    }
+    .windowInfo {
+      padding-top: 93.4px;
+      margin-bottom: 237px;
+    }
+    .popup {
+      margin: 0vw .33vw 0vw .33vw;
+    }
+    .close-btn {
+      top: 24px;
+      right: 26px;
+    }
+    .page {
+      padding: 14px;
+    }
+    iframe {
+      width: calc(100vw - 33px);
+      height: calc(100vh - 244px);
+      margin: 14px 0px 0px 14px;
+    }
+  }
