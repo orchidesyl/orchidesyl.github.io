@@ -1,0 +1,153 @@
+<!--Web design and coding by Orchid Sylvester-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-22MFJ0B8PZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-22MFJ0B8PZ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, I'm Orchid.</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" type="image/x-icon" href="assets/graphics/flower.svg">
+    <meta name="description" content="A collection of things relating to things that mean a lot to me.">
+    <meta name="keywords" content="Orchid Sylvester, Orchid Sylvester Artist, Orchid Sylvester Designer, Newark NJ Designer, Newark NJ Artist, Newark NJ Digital Fabricator, Newark NJ CAD, Newark NJ 3D Printer, Orchid Sylvester Industrial Designer, Newark NJ Industrial Designer">
+  </head>
+  <body>
+    <div class="section navMenu" id="nav">
+      <details>
+      <summary class="button" style="font-size: 22px;">COLLECTION</summary>
+        <div class="archivePage" id="navButtons">
+          <!--Alphabetical Order-->
+          <button class="button filterDiv design illustration 2D" onclick="windowPop('windowFrameAtlas-Odyssey')">Atlas' Odyssey</button>
+          <button class="button filterDiv design fabrication 3D" onclick="windowPop('windowFrameBichos')">Bichos</button>
+          <button class="button filterDiv illustration 2D" onclick="windowPop('windowFrameEarlyWorks')">Early Works (2016 - 2020)</button>
+          <button class="button filterDiv design fabrication 2D" onclick="windowPop('windowFrameFestering')">Festering (House as Book)</button>
+          <button class="button filterDiv design 2D" onclick="windowPop('windowFrameHands')">Hands (Body as Book)</button>
+          <button class="button filterDiv design fabrication 3D" onclick="windowPop('windowFrameHumanBehavior')">Human Behavior</button>
+          <button class="button filterDiv design 4D" onclick="windowPop('windowFrameIDS')">Intra-Disciplinary Seminar Fall 2022</button>
+          <button class="button filterDiv design fabrication illustration 2D" onclick="windowPop('windowFrameMalice')">Malice (House as Book)</button>
+        </div>
+      </details>
+      <br>
+      <!-- Filter Buttons -->
+      <details>
+      <summary class="button" style="font-size: 22px;">MENU</summary>
+      <section id="navButtons">
+        <button class="button" onclick="filterSelection('design')">Design</button>
+        <button class="button" onclick="filterSelection('illustration')">Illustration</button>
+        <button class="button" onclick="filterSelection('fabrication')">Fabrication</button>
+        <div id="dimmension">
+          <button class="button" onclick="filterSelection('2D')">2D</button>
+          <button class="button" onclick="filterSelection('3D')">3D</button>
+          <button class="button" onclick="filterSelection('4D')">4D</button>
+        </div>
+        <button class="button actve" onclick="filterSelection('all')">All</button>
+      </section>
+      </details>
+      <br>
+        <img onclick="windowPop('windowFrameColophon')" id="colophon" class="icons" src="assets/graphics/flower.svg">
+        <section id="footer">
+        <br>
+        <span><button class="link"><a onclick="windowPop('windowFrameResume')">Resume</a>; <a  onclick="windowPop('windowFrameCV')">CV</a></button></span>
+        <span><button class="link"><a href="mailto:hello@orchidesyl.com">E-Mail</a></button></span>
+      </section>
+    </div>
+    
+    <div class="section" id="header">
+      <h1 title="About Me" onclick="windowPop('windowFrameAbout')">Orchid Sylvester</h1>
+        <img id="color-menu" class=" color-main icons" onclick="colorMode()" src="assets/graphics/star.svg">
+    </div>
+    
+    <div class="section" id="main">
+      <!--Favorites-->
+      <div onclick="windowPop('windowFrameAtlas-Odyssey')" class="filterDiv design illustration 2D">
+        <img class="thumbnail" src="Atlas-Odyssey/source/thumbs/AO_S1-GP_CoverSpread_Mockup.png">
+        <p class="caption">Atlas' Odyssey <a href="Atlas-Odyssey.html" target="_blank">[↗]</a></p> 
+        <h5 class="caption">Realizing estrangements by memories for those who he holds dear, “Atlas” accounts for visages of the past.</h5>
+      </div>
+      <div onclick="windowPop('windowFrameMalice')" class="filterDiv fabrication design 3D">
+        <img class="thumbnail" src="projects/House-as-Book/Malice/Malice_4.jpg">
+        <p class="caption">Malice (House as Book)</p> 
+        <h5 class="caption">An abstracted autobiographical investigation of memory through book making and materiality.</h5>
+      </div>
+      <div onclick="windowPop('windowFrameHands')" class="filterDiv illustration design 2D">
+        <img class="thumbnail" src="projects/Body-as-Book/Hands/Hands_4.jpg">
+        <p class="caption">Hands (Body as Book)</p> 
+        <h5 class="caption">An abstracted autobiographical investigation of memory through book making and materiality.</h5>
+      </div>
+      <div onclick="windowPop('windowFrameHumanBehavior')" class="filterDiv fabrication design 3D">
+        <img class="thumbnail" src="projects/HumanBehavior/Origa/HB_Origa-3.jpg">
+        <p class="caption">Human Behavior</p> 
+        <h5 class="caption">A series of 1:4 Fashion Dolls</h5>
+      </div>
+      <div>
+      </div>
+      <!--
+      
+        onClick / Hidden
+      
+      -->
+      <div class="popup" id="windowFrameAtlas-Odyssey">
+        <iframe id="aoFrame" loading="lazy" src="Atlas-Odyssey.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameAtlas-Odyssey')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameHumanBehavior">
+        <iframe id="hbFrame" loading="lazy" src="projects/HumanBehavior.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameHumanBehavior')">&times;</span>
+      </div>
+      
+      <div class="popup" id="windowFrameMalice">
+        <iframe id="maliceFrame" loading="lazy" src="projects/House-as-Book/Malice.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameMalice')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameHands">
+        <iframe id="handsFrame" loading="lazy" src="projects/Body-as-Book/Hands.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameHands')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameAbout">
+        <iframe id="aboutFrame" loading="lazy" src="about.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameAbout')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameResume">
+        <iframe id="resumeFrame" loading="lazy" src="resume.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameResume')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameCV">
+        <iframe id="cvFrame" loading="lazy" src="CV.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameCV')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameColophon">
+        <iframe id="colophonFrame" loading="lazy" src="colophon.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameColophon')">&times;</span>
+      </div>
+      <!-- -->
+      <div class="popup" id="windowFrameBichos">
+        <iframe id="bichosFrame" loading="lazy" src="projects/Bichos.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameBichos')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameEarlyWorks">
+        <iframe id="hbFrame" loading="lazy" src="projects/EarlyWorks.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameEarlyWorks')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameFestering">
+        <iframe id="festeringFrame" loading="lazy" src="projects/House-as-Book/Festering.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameFestering')">&times;</span>
+      </div>
+      <div class="popup" id="windowFrameIDS">
+        <iframe id="idsFrame" loading="lazy" src="projects/IDS.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameIDS')">&times;</span>
+      </div>
+      <!-- -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

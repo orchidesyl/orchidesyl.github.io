@@ -1,0 +1,100 @@
+<!--Web design and coding by Orchid Sylvester-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CH952CNMG2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-CH952CNMG2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas' Odyssey</title>
+    <link href="Atlas-Odyssey/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="icon" type="image/x-icon" href="assets/graphics/flower.svg">
+    <meta name="description" content="Atlas' Odyssey is a graphic novel created, illustrated, and designed by Orchid Sylvester.">
+    <meta name="keywords" content="Atlas Odyssey, Atlas' Odyssey, Orchid Sylvester, Atlas Odyssey comic, Atlas Odyssey graphic novel, Orchid Sylvester illustration">
+  </head>
+  <body>
+    <div class="section navMenu" id="nav">
+      <!-- Filter Buttons -->
+      <section id="navButtons">
+        <div class="archivePage">
+          <details>
+            <summary class="button">Contents</summary>
+            <script>
+              indexPage = "Atlas-Odyssey.html"
+            </script>
+            <div  class="archiveNav">
+              <details class="chapter0">
+                <summary class="button">Chapter 0 - Prologue</summary>
+              </details>
+              <details class="chapter1">
+                <summary class="button">Chapter 1 - Genesis</summary>
+              </details>
+            </div>
+          </details>
+        </div>
+        <br>
+        <button class="button" onclick="windowPop('windowFrameColophon')">Colophon</button>
+        <br>
+        <span id="footer">
+        <button class="link"><a href="mailto:hello@orchidesyl.com?subject=Atlas' Odyssey Mailing List &body=Subscribe me to the mailing list for Atlas' Odyssey.">Mailing List</a></button>
+        <br>
+        <button class="link"><a href="https://tapas.io/series/Atlas-Odyssey/" target="_blank">Tapas</a>; <a href="https://www.webtoons.com/en/canvas/atlas-odyssey/list?title_no=692976" target="_blank">Webtoon</a></button>
+        </span>
+      </section>
+    </div>
+    
+    <div class="section" id="header">
+      <a href=""><img src="Atlas-Odyssey/source/AO_Logotype-Inline.svg" height="42px"></a>
+    </div>
+    
+    <div class="section" id="main">
+      <div class="page">
+
+      <!-- most of the elements on these pages are defined in the js files as functions, then we tell these functions where to show up on the page by placing empty divs and naming those divs the name of the js functions. check the js files to edit these elements in more detail.-->
+    
+        <div>
+      
+          <!-- make sure that if you want to turn on automatically scrolling to the top of the comic when you load a new page, keep the id of this div and the variable "navScrollTo" in showcomic.js the same-->
+          <div id="showComic">
+      
+            <!-- write the title of the page. -->
+            <div class="writePageTitle"></div>
+            <!-- write top navigation -->
+            <div class="writeNav"></div>
+            <!-- write the current page of your comic -->
+            <div class="writePageClickable"></div>
+            <!-- write bottom navigation -->
+            <div class="writeNav"></div>
+            
+          </div>
+        </div>
+        <!--
+        <div id="authorNotes">
+          <p>Author Note</p>
+          <div class="writeAuthorNotes"></div>
+        </div>
+        -->
+      </div>
+    
+      <!-- Hidden -->
+      <div class="popup" id="windowFrameColophon">
+        <iframe id="colophonFrame" loading="lazy" src="Atlas-Odyssey/Colophon.html"></iframe>
+        <span class="close-btn" onclick="windowPop('windowFrameColophon')">&times;</span>
+      </div>
+      
+    </div>
+    <script src="Atlas-Odyssey/js/ao_comic_settings.js" defer></script>
+    <script src="Atlas-Odyssey/js/comic_show.js" defer></script>
+    <script src="Atlas-Odyssey/js/comic_archive.js" defer></script>
+    <script src="script.js">
+    </script>
+  </body>
+</html>
