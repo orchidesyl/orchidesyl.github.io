@@ -35,7 +35,7 @@ body {
 }
 #foot-all {
   bottom: inherit;
-  position: sticky;
+  position: fixed;
   background-color: inherit;
 }
 #color-menu {
