@@ -33,6 +33,11 @@ body {
   cursor: pointer;
   position: sticky;
 }
+#foot-all {
+  bottom: inherit;
+  position: sticky;
+  background-color: inherit;
+}
 #color-menu {
   width: 33px;
   cursor: pointer;
