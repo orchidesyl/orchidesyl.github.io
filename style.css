@@ -35,7 +35,7 @@ body {
 }
 #foot-all {
   bottom: inherit;
-  position: fixed;
+  position: sticky;
   background-color: inherit;
   height: 65px;
   align-content: center;
