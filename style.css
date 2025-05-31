@@ -184,7 +184,7 @@ p, a, button {
   @media screen and (min-width: 720px){
     .navMenu {
       float: left;
-      height: 100%;
+      height: 80%;
       width: 265px;
       padding: 30px;
       overflow: auto;
