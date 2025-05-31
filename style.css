@@ -37,6 +37,8 @@ body {
   bottom: inherit;
   position: fixed;
   background-color: inherit;
+  height: 65px;
+  align-content: center;
 }
 #color-menu {
   width: 33px;
