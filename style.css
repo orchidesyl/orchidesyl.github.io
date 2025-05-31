@@ -34,7 +34,7 @@ body {
   position: sticky;
 }
 #foot-all {
-  bottom: inherit;
+  bottom: -33px;
   position: sticky;
   background-color: inherit;
   height: 65px;
