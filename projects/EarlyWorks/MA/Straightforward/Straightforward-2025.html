@@ -62,7 +62,6 @@ create images
 <body>
     <!--
     <div class="game-container">
-        <h1>Choose Your Own Adventure</h1>
         <div class="story-text" id="story-text"></div>
         <div class="choices" id="choices"></div>
     </div>
@@ -72,20 +71,21 @@ create images
         // Define your game story and choices
         const story = {
             start: {
-                text: "You find yourself in a dark forest. There are two paths in front of you. One leads deeper into the woods, and the other seems to go uphill. What will you do?",
+                text: "Midway upon the journey of our life, I found myself within a forest dark,
+  For the straightforward pathway had been lost.",
                 choices: [
-                    { text: "Take the path into the woods.", next: "woods" },
-                    { text: "Take the uphill path.", next: "hill" }
+                    { text: "Yet, at the turn of each passing day, I lay knowing that tomorrow; oh, tomorrow; the room, the same.", next: "wall" },
+                    { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things. Electricity; Power.", next: "hum" }
                 ]
             },
-            woods: {
+            wall: {
                 text: "You walk down the forest path and hear something rustling in the bushes. Do you investigate or keep walking?",
                 choices: [
                     { text: "Investigate the bushes.", next: "bushes" },
                     { text: "Keep walking.", next: "continueWoods" }
                 ]
             },
-            hill: {
+            hum: {
                 text: "You climb the hill and reach a beautiful overlook. You can see a village far in the distance. Do you head towards the village or explore the area more?",
                 choices: [
                     { text: "Head towards the village.", next: "village" },
