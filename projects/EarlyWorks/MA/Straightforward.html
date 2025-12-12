@@ -63,6 +63,28 @@ create images
         .choice-button:hover {
             background-color: #243670;
         }
+        /* add to your existing <style> */
+        #choice-image-container {
+          margin: 10px 0 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #choice-image-container img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 6px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+          transition: transform .12s ease;
+          cursor: zoom-in;
+        }
+        #choice-image-container .caption {
+          width: 100%;
+          text-align: center;
+          margin-top: 6px;
+          font-size: .9rem;
+          color: rgba(255,255,229,.9);
+        }
     </style>
 </head>
 <body>
@@ -72,6 +94,52 @@ create images
         <div class="choices" id="choices"></div>
     </div>
     <script>
+        //for images
+        // Safe helper: remove all children from an element (no innerHTML)
+        function clearElement(el) {
+          while (el.firstChild) el.removeChild(el.firstChild);
+        }
+        
+        // Insert a choice image into the dedicated container.
+        // opts: { src, alt, caption, id, className, loading='lazy' }
+        function showChoiceImage(opts = {}) {
+          const container = document.getElementById('choice-image-container');
+          if (!container) return;
+        
+          // remove any existing image
+          clearElement(container);
+        
+          if (!opts || !opts.src) return; // nothing to show
+        
+          const wrapper = document.createElement('div');
+          wrapper.className = opts.className || 'choice-image-wrap';
+        
+          const img = document.createElement('img');
+          img.setAttribute('src', opts.src);
+          img.setAttribute('alt', opts.alt || '');
+          img.loading = opts.loading || 'lazy';
+          if (opts.id) img.id = opts.id;
+        
+          // optional caption
+          if (opts.caption) {
+            const cap = document.createElement('div');
+            cap.className = 'caption';
+            cap.textContent = opts.caption;
+            wrapper.appendChild(img);
+            wrapper.appendChild(cap);
+          } else {
+            wrapper.appendChild(img);
+          }
+        
+          container.appendChild(wrapper);
+        }
+        
+        // Remove any displayed choice image
+        function hideChoiceImage() {
+          const container = document.getElementById('choice-image-container');
+          if (!container) return;
+          clearElement(container);
+        }
         // Defining story and choices
         //game will load page of specific funciton, so choices can be rhizomatic
         const story = {
