@@ -9,8 +9,8 @@ create images
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Straightforward (2025)</title>
     <style>
         body {
@@ -29,17 +29,9 @@ create images
             max-width: 600px;
             padding: 20px;
         }
-        h1 {
-            font-size: 24px;
-            text-align: center;
-        }
-        .story-text {
-            margin-bottom: 20px;
-        }
-        .choices {
-            display: flex;
-            flex-direction: column;
-        }
+        h1 { font-size: 24px; text-align: center; }
+        .story-text { margin-bottom: 20px; line-height: 1.5; }
+        .choices { display: flex; flex-direction: column; }
         .choice-button {
             background-color: inherit;
             color: inherit;
@@ -49,8 +41,21 @@ create images
             border-radius: 5px;
             cursor: pointer;
         }
-        .choice-button:hover {
-            background-color: #243670;
+        .choice-button:hover { background-color: #243670; }
+
+        /* image styling */
+        .story-text img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+        .caption {
+            font-size: 0.9em;
+            color: #eae7c8;
+            margin-bottom: 12px;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -59,55 +64,169 @@ create images
         <div class="story-text" id="story-text"></div>
         <div class="choices" id="choices"></div>
     </div>
+
     <script>
-        // Defining story and choices
-        //game will load page of specific funciton, so choices can be rhizomatic
+        /*
+         Two safe ways shown to insert images into the story text:
+         1) Structured content array (recommended): each story node has a `content` array
+            of items where each item is {type: "text", text: "..."} or {type: "image", src: "...", alt: "...", caption: "..."}.
+            The renderer builds DOM nodes (safer than innerHTML).
+         2) Raw HTML (fallback): a story node can include `html` (string). This gets placed
+            with innerHTML (be careful — XSS risk if content is untrusted).
+        */
+
         const story = {
             start: {
-                text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost...",
+                // Example using content array with an inline image between text segments
+                content: [
+                    { type: "text", text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost..." },
+                    { type: "image", src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=60&auto=format&fit=crop", alt: "misty forest path", caption: "A path swallowed by the morning fog." },
+                    { type: "text", text: "Dawn was near; the sun contested my wakefulness." }
+                ],
                 choices: [
                     { text: "Yet, at the turn of each passing day, I lay knowing tomorrow, oh, tomorrow; the room, the same.", next: "wall" },
-                    { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things.", next: "hum" }
+                    { text: "The hum beckons me. I hear it in the outlets and the tiles.", next: "hum" }
                 ]
             },
             wall: {
-                text: "It will be sunrise soon. My body can sense it. I'm lucid. so much so I am in competition with the sun. Are these premonitions to the inevitable? This is the start to the rest of my life.",
+                // You can also keep a single string for compatibility
+                content: [
+                    { type: "text", text: "It will be sunrise soon. My body can sense it. I'm lucid — so much so I am in competition with the sun." },
+                    { type: "image", src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=60&auto=format&fit=crop", alt: "sunrise", caption: "Light arrives in its own time." }
+                ],
                 choices: [
                     { text: "Investigate the bushes.", next: "bushes" },
                     { text: "Keep walking.", next: "continueWoods" }
                 ]
             },
             hum: {
-                text: "This hum, I imagine, is what the plants so low and high feel from the sun. It's scorching, but tender. I too am low, but not quite digging my heals into the earth, like the plants are. How amazing is it to be here as the same moment as them. This is the start to the rest of my life.",
+                content: [
+                    { type: "text", text: "This hum, I imagine, is what the plants so low and high feel from the sun." },
+                    // Example using a relative path to an image in your repo (adjust to actual path)
+                    { type: "image", src: "../assets/images/hum-device.jpg", alt: "an old radio", caption: "Sometimes it sounds like a radio." }
+                ],
                 choices: [
                     { text: "Head towards the village.", next: "village" },
                     { text: "Explore the area.", next: "exploreHill" }
                 ]
             },
+            bushes: {
+                content: [
+                    { type: "text", text: "You part the leaves and find a small stone." }
+                ],
+                choices: [
+                    { text: "Take it.", next: "end" },
+                    { text: "Leave it.", next: "continueWoods" }
+                ]
+            },
+            continueWoods: {
+                content: [
+                    { type: "text", text: "You walk deeper into the trees." }
+                ],
+                choices: [
+                    { text: "Press on.", next: "end" }
+                ]
+            },
+            exploreHill: {
+                content: [
+                    { type: "text", text: "The hill is gentle — and something hums there." }
+                ],
+                choices: [
+                    { text: "Approach the hum.", next: "end" }
+                ]
+            },
+            village: {
+                content: [
+                    { type: "text", text: "The village is small, with lights like steady stars." }
+                ],
+                choices: [
+                    { text: "Enter the inn.", next: "end" }
+                ]
+            },
             end: {
-                text: "This is what I pictured in my head of the final destination.",
+                content: [
+                    { type: "text", text: "This is what I pictured in my head of the final destination." }
+                ],
                 choices: [
                     { text: "If I could do everything over, I would.", next: "start" },
                     { text: "Despite everything, I wouldn't change anything.", next: "credits" }
                 ]
             },
             credits: {
-                text: "Straightforward (2025), by Orchid Sylvester. Inspired by my fellowship experience the previous summer at Peters Valley School of Craft. Created as the final project for MSTU 5003 + 5013 Theory of Programming Lecture and Lab at Teacher's College, Columbia University."
+                // Example of using raw HTML (fallback). Use only if you trust the string.
+                html: "
+                    <p>Straightforward, by Orchid Sylvester. Inspired by my fellowship experience the previous summer at Peters Valley School of Craft.</p>
+                    <p class='caption'>Thank you for playing.</p>",
+                choices: [
+                    { text: "Relive", next: "start" }
+                ]
             }
         };
 
-        // Initialize the game
         let currentLocation = "start";
 
-        // Function to update the story and choices
+        function renderContent(node) {
+            const container = document.createElement('div');
+
+            // Raw HTML support (fallback). BE CAREFUL: innerHTML is a vector for XSS.
+            if (node.html) {
+                container.innerHTML = node.html;
+                return container;
+            }
+
+            // Content array renderer (safe DOM creation)
+            const parts = node.content || [];
+            parts.forEach(part => {
+                if (part.type === "text") {
+                    const p = document.createElement('p');
+                    p.textContent = part.text;
+                    container.appendChild(p);
+                } else if (part.type === "image") {
+                    const img = document.createElement('img');
+                    img.src = part.src;
+                    img.alt = part.alt || '';
+                    img.loading = 'lazy'; // performance
+                    container.appendChild(img);
+
+                    if (part.caption) {
+                        const cap = document.createElement('div');
+                        cap.className = 'caption';
+                        cap.textContent = part.caption;
+                        container.appendChild(cap);
+                    }
+                } else {
+                    // unknown type: treat as text
+                    const p = document.createElement('p');
+                    p.textContent = String(part);
+                    container.appendChild(p);
+                }
+            });
+
+            // If node had a plain `text` fallback for backward compatibility:
+            if ((!parts || parts.length === 0) && node.text) {
+                const p = document.createElement('p');
+                p.textContent = node.text;
+                container.appendChild(p);
+            }
+
+            return container;
+        }
+
         function updateGame() {
             const currentStory = story[currentLocation];
-            document.getElementById("story-text").innerText = currentStory.text;
+            const storyTextDiv = document.getElementById("story-text");
 
-            // Update the choices
+            // Clear previous content
+            storyTextDiv.innerHTML = "";
+
+            // Render content safely
+            const contentNode = renderContent(currentStory);
+            storyTextDiv.appendChild(contentNode);
+
+            // Update choices
             const choicesContainer = document.getElementById("choices");
             choicesContainer.innerHTML = "";
-            currentStory.choices.forEach(choice => {
+            (currentStory.choices || []).forEach(choice => {
                 const button = document.createElement("button");
                 button.innerText = choice.text;
                 button.classList.add("choice-button");
@@ -119,7 +238,6 @@ create images
             });
         }
 
-        // Start the game
         updateGame();
     </script>
 </body>
