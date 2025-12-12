@@ -158,53 +158,6 @@ create images
                 };
                 choicesContainer.appendChild(button);
             });
-        }
-
-         // Safe helper: remove all children from an element (no innerHTML)
-        function clearElement(el) {
-          while (el.firstChild) el.removeChild(el.firstChild);
-        }
-        
-        // Insert a choice image into the dedicated container.
-        // opts: { src, alt, caption, id, className, loading='lazy' }
-        function showChoiceImage(opts = {}) {
-          const container = document.getElementById('choice-image-container');
-          if (!container) return;
-        
-          // remove any existing image
-          clearElement(container);
-        
-          if (!opts || !opts.src) return; // nothing to show
-        
-          const wrapper = document.createElement('div');
-          wrapper.className = opts.className || 'choice-image-wrap';
-        
-          const img = document.createElement('img');
-          img.setAttribute('src', opts.src);
-          img.setAttribute('alt', opts.alt || '');
-          img.loading = opts.loading || 'lazy';
-          if (opts.id) img.id = opts.id;
-        
-          // optional caption
-          if (opts.caption) {
-            const cap = document.createElement('div');
-            cap.className = 'caption';
-            cap.textContent = opts.caption;
-            wrapper.appendChild(img);
-            wrapper.appendChild(cap);
-          } else {
-            wrapper.appendChild(img);
-          }
-        
-          container.appendChild(wrapper);
-        }
-        
-        // Remove any displayed choice image
-        function hideChoiceImage() {
-          const container = document.getElementById('choice-image-container');
-          if (!container) return;
-          clearElement(container);
-        }
 
         // Start the game
         updateGame();
