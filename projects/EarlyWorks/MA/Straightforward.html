@@ -27,10 +27,7 @@ create images
         .game-container {
             width: 80%;
             max-width: 600px;
-            background-color: #fff;
-            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 24px;
@@ -66,7 +63,7 @@ create images
         // Define your game story and choices
         const story = {
             start: {
-                text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost.",
+                text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost...",
                 choices: [
                     { text: "Yet, at the turn of each passing day, I lay knowing tomorrow, oh, tomorrow; the room, the same.", next: "wall" },
                     { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things.", next: "hum" }
@@ -86,65 +83,15 @@ create images
                     { text: "Explore the area.", next: "exploreHill" }
                 ]
             },
-            bushes: {
-                text: "You approach the bushes cautiously. Suddenly, a small animal jumps out, scaring you! You decide to leave quickly and continue your journey.",
+            end: {
+                text: "This is what I pictured in my head of the final destination.",
                 choices: [
-                    { text: "Keep walking deeper into the woods.", next: "continueWoods" },
-                    { text: "Go back to the starting point.", next: "start" }
+                    { text: "If I could do everything over, I would.", next: "start" }
+                    { text: "Despite everything, I wouldn't change anything.", next: "credits" }
                 ]
-            },
-            continueWoods: {
-                text: "You continue down the path and stumble upon an old abandoned cabin. Do you enter or leave?",
-                choices: [
-                    { text: "Enter the cabin.", next: "cabin" },
-                    { text: "Leave the area.", next: "start" }
-                ]
-            },
-            village: {
-                text: "You reach the village. The people seem friendly and invite you to a feast. Do you join them or refuse?",
-                choices: [
-                    { text: "Join the feast.", next: "feast" },
-                    { text: "Refuse and leave the village.", next: "start" }
-                ]
-            },
-            exploreHill: {
-                text: "You explore the hill and discover a hidden cave. Do you enter or stay outside?",
-                choices: [
-                    { text: "Enter the cave.", next: "cave" },
-                    { text: "Stay outside and enjoy the view.", next: "start" }
-                ]
-            },
-            cabin: {
-                text: "Inside the cabin, you find an old map. It leads to a hidden treasure. Do you follow the map or leave?",
-                choices: [
-                    { text: "Follow the map.", next: "treasure" },
-                    { text: "Leave the cabin.", next: "start" }
-                ]
-            },
-            treasure: {
-                text: "You follow the map and find a chest filled with gold! Congratulations, you've found the treasure!",
-                choices: [
-                    { text: "Play again.", next: "start" }
-                ]
-            },
-            feast: {
-                text: "The feast is great, and you have a wonderful time with the villagers. You've made new friends!",
-                choices: [
-                    { text: "Play again.", next: "start" }
-                ]
-            },
-            cave: {
-                text: "Inside the cave, you find strange symbols on the walls. Do you explore further or leave?",
-                choices: [
-                    { text: "Explore further.", next: "mystery" },
-                    { text: "Leave the cave.", next: "start" }
-                ]
-            },
-            mystery: {
-                text: "The symbols lead you to an ancient artifact. You decide to take it and leave the cave. You've discovered something magical!",
-                choices: [
-                    { text: "Play again.", next: "start" }
-                ]
+            }
+            credits: {
+                text: "Straightforward (2025), by Orchid Sylvester. Inspired by my fellowship experience the previous summer at Peters Valley School of Craft. Created as the final project for MSTU 5003 + 5013 Theory of Programming Lecture and Lab at Teacher's College, Columbia University."
             }
         };
 
