@@ -1,0 +1,178 @@
+<!--commenting out unsorted code
+TO DO
+create site wireframe
+figure out local progress save
+outline story
+create images
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straightforward (2025)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .game-container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+        .story-text {
+            margin-bottom: 20px;
+        }
+        .choices {
+            display: flex;
+            flex-direction: column;
+        }
+        .choice-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .choice-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="story-text" id="story-text"></div>
+        <div class="choices" id="choices"></div>
+    </div>
+    <script>
+        // Define your game story and choices
+        const story = {
+            start: {
+                text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost.",
+                choices: [
+                    { text: "Yet, at the turn of each passing day, I lay knowing tomorrow, oh, tomorrow; the room, the same.", next: "wall" },
+                    { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things.", next: "hum" }
+                ]
+            },
+            wall: {
+                text: "It will be sunrise soon. My body can sense it. I'm lucid. so much so I am in competition with the sun. Are these premonitions to the inevitable? This is the start to the rest of my life.",
+                choices: [
+                    { text: "Investigate the bushes.", next: "bushes" },
+                    { text: "Keep walking.", next: "continueWoods" }
+                ]
+            },
+            hum: {
+                text: "This hum, I imagine, is what the plants so low and high feel from the sun. It's scorching, but tender. I too am low, but not quite digging my heals into the earth, like the plants are. How amazing is it to be here as the same moment as them. This is the start to the rest of my life.",
+                choices: [
+                    { text: "Head towards the village.", next: "village" },
+                    { text: "Explore the area.", next: "exploreHill" }
+                ]
+            },
+            bushes: {
+                text: "You approach the bushes cautiously. Suddenly, a small animal jumps out, scaring you! You decide to leave quickly and continue your journey.",
+                choices: [
+                    { text: "Keep walking deeper into the woods.", next: "continueWoods" },
+                    { text: "Go back to the starting point.", next: "start" }
+                ]
+            },
+            continueWoods: {
+                text: "You continue down the path and stumble upon an old abandoned cabin. Do you enter or leave?",
+                choices: [
+                    { text: "Enter the cabin.", next: "cabin" },
+                    { text: "Leave the area.", next: "start" }
+                ]
+            },
+            village: {
+                text: "You reach the village. The people seem friendly and invite you to a feast. Do you join them or refuse?",
+                choices: [
+                    { text: "Join the feast.", next: "feast" },
+                    { text: "Refuse and leave the village.", next: "start" }
+                ]
+            },
+            exploreHill: {
+                text: "You explore the hill and discover a hidden cave. Do you enter or stay outside?",
+                choices: [
+                    { text: "Enter the cave.", next: "cave" },
+                    { text: "Stay outside and enjoy the view.", next: "start" }
+                ]
+            },
+            cabin: {
+                text: "Inside the cabin, you find an old map. It leads to a hidden treasure. Do you follow the map or leave?",
+                choices: [
+                    { text: "Follow the map.", next: "treasure" },
+                    { text: "Leave the cabin.", next: "start" }
+                ]
+            },
+            treasure: {
+                text: "You follow the map and find a chest filled with gold! Congratulations, you've found the treasure!",
+                choices: [
+                    { text: "Play again.", next: "start" }
+                ]
+            },
+            feast: {
+                text: "The feast is great, and you have a wonderful time with the villagers. You've made new friends!",
+                choices: [
+                    { text: "Play again.", next: "start" }
+                ]
+            },
+            cave: {
+                text: "Inside the cave, you find strange symbols on the walls. Do you explore further or leave?",
+                choices: [
+                    { text: "Explore further.", next: "mystery" },
+                    { text: "Leave the cave.", next: "start" }
+                ]
+            },
+            mystery: {
+                text: "The symbols lead you to an ancient artifact. You decide to take it and leave the cave. You've discovered something magical!",
+                choices: [
+                    { text: "Play again.", next: "start" }
+                ]
+            }
+        };
+
+        // Initialize the game
+        let currentLocation = "start";
+
+        // Function to update the story and choices
+        function updateGame() {
+            const currentStory = story[currentLocation];
+            document.getElementById("story-text").innerText = currentStory.text;
+
+            // Update the choices
+            const choicesContainer = document.getElementById("choices");
+            choicesContainer.innerHTML = "";
+            currentStory.choices.forEach(choice => {
+                const button = document.createElement("button");
+                button.innerText = choice.text;
+                button.classList.add("choice-button");
+                button.onclick = () => {
+                    currentLocation = choice.next;
+                    updateGame();
+                };
+                choicesContainer.appendChild(button);
+            });
+        }
+
+        // Start the game
+        updateGame();
+    </script>
+</body>
+</html>
