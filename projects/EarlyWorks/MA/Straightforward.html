@@ -153,17 +153,32 @@ create images
             wall: {
                 text: "It will be sunrise soon. My body can sense it. I'm lucid. so much so I am in competition with the sun. Are these premonitions to the inevitable? This is the start to the rest of my life.",
                 choices: [
-                    { text: "Investigate the bushes.", next: "end" }
+                    { text: "I should get more rest. I only had a few hours of sleep.", next: "insomnia" },
+                    { text: "I made up my mind, and it's now or never.", next: "get-ready" }
+                ]
+            },
+            insomnia: {
+                text: "Ah, my neck... This always happens to me. I know better, but I can't leave the warmth of my blankets. It's familiar.",
+                choices: [
+                    { text: "My days as days no longer exist. This once-fleeting-moment has turned into my fate. Every day is the same. So; this is all there is.", next: "decompose" },
+                    { text: "I made up my mind, and it's now or never.", next: "get-ready" }
+                ]
+            },
+            decompose: {
+                text: "My mind replays it over, and over, and over, and over, and over-- I've become lower than the honorable plants below. I am not rooted, but wormed. Even the ones within me have surpassed and overtaken me. How unfortunate; to be witness to this repeating casualty of everything.",
+                choices: [
+                    { text: "", next: "end" }
                 ]
             },
             hum: {
                 text: "This hum, I imagine, is what the plants so low and high feel from the sun. It's scorching, but tender. I too am low, but not quite digging my heals into the earth, like the plants are. How amazing is it to be here as the same moment as them. This is the start to the rest of my life.",
                 choices: [
-                    { text: "Head towards the village.", next: "end" }
+                    { text: "I wear my fingers to the bone to reach the crust that smothers me.", next: "get-ready"},
+                    { text: "I wear my fingers to the bone to reach the crust that smothers me.", next: "get-ready"
                 ]
             },
             end: {
-                text: "These are the same as the pictures in my head of the final destination.",
+                text: "My last premonition. These are the same as the pictures in my head of the final destination.",
                 choices: [
                     { text: "If I could do everything over, I would.", next: "start" },
                     { text: "Despite everything, I wouldn't change anything.", next: "credits" }
