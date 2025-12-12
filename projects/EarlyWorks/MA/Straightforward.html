@@ -15,8 +15,8 @@ create images
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #3a45b4;
+            color: #ffffe5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -41,8 +41,8 @@ create images
             flex-direction: column;
         }
         .choice-button {
-            background-color: #3498db;
-            color: #fff;
+            background-color: inherit;
+            color: inherit;
             padding: 10px;
             margin: 10px 0;
             border: none;
@@ -50,7 +50,7 @@ create images
             cursor: pointer;
         }
         .choice-button:hover {
-            background-color: #2980b9;
+            background-color: #243670;
         }
     </style>
 </head>
@@ -60,7 +60,8 @@ create images
         <div class="choices" id="choices"></div>
     </div>
     <script>
-        // Define your game story and choices
+        // Defining story and choices
+        //game will load page of specific funciton, so choices can be rhizomatic
         const story = {
             start: {
                 text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost...",
@@ -86,10 +87,10 @@ create images
             end: {
                 text: "This is what I pictured in my head of the final destination.",
                 choices: [
-                    { text: "If I could do everything over, I would.", next: "start" }
+                    { text: "If I could do everything over, I would.", next: "start" },
                     { text: "Despite everything, I wouldn't change anything.", next: "credits" }
                 ]
-            }
+            },
             credits: {
                 text: "Straightforward (2025), by Orchid Sylvester. Inspired by my fellowship experience the previous summer at Peters Valley School of Craft. Created as the final project for MSTU 5003 + 5013 Theory of Programming Lecture and Lab at Teacher's College, Columbia University."
             }
