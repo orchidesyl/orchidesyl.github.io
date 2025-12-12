@@ -24,6 +24,17 @@ create images
             align-items: center;
             height: 100vh;
         }
+        .cyanotype img {
+          filter: grayscale(100%) contrast(1) blur(var(--blur));
+          flex: 1 0 100%;
+          height: 100%;
+          max-width: 100%;
+          mix-blend-mode: var(--bg-blend);
+          object-fit: cover;
+          opacity:  var(--opacity);
+          position: relative;
+          width: 100%;
+        }
         .game-container {
             width: 80%;
             max-width: 600px;
@@ -57,6 +68,7 @@ create images
 <body>
     <div class="game-container">
         <div class="story-text" id="story-text"></div>
+        <div class="cyanotype" id="choice-image-container" aria-hidden="true"></div>
         <div class="choices" id="choices"></div>
     </div>
     <script>
@@ -67,7 +79,7 @@ create images
                 text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost...",
                 choices: [
                     { text: "Yet, at the turn of each passing day, I lay knowing tomorrow, oh, tomorrow; the room, the same.", next: "wall" },
-                    { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things.", next: "hum" }
+                    { text: "The hum bekons me. Yes, that hum in the walls, the gadgets, the outlets. The spirit that moves through all things.", next: "hum" }
                 ]
             },
             wall: {
@@ -83,7 +95,7 @@ create images
                 ]
             },
             end: {
-                text: "This is what I pictured in my head of the final destination.",
+                text: "These are the same as the pictures in my head of the final destination.",
                 choices: [
                     { text: "If I could do everything over, I would.", next: "start" },
                     { text: "Despite everything, I wouldn't change anything.", next: "credits" }
