@@ -12,7 +12,6 @@ create images
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Straightforward (2025)</title>
-    <meta name="description" content="Straightforward (2025) is a choose your own adventure narrativizing the urban protagonist's call into the rural. Faced with the opportunity to bask in education of nature, she must confront the fallacies of man.">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,17 +23,6 @@ create images
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .cyanotype img {
-          filter: grayscale(100%) contrast(1) blur(var(--blur));
-          flex: 1 0 100%;
-          height: 100%;
-          max-width: 100%;
-          mix-blend-mode: var(--bg-blend);
-          object-fit: cover;
-          opacity:  var(--opacity);
-          position: relative;
-          width: 100%;
         }
         .game-container {
             width: 80%;
@@ -64,34 +52,11 @@ create images
         .choice-button:hover {
             background-color: #243670;
         }
-        /* add to your existing <style> */
-        #choice-image-container {
-          margin: 10px 0 16px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        #choice-image-container img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 6px;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-          transition: transform .12s ease;
-          cursor: zoom-in;
-        }
-        #choice-image-container .caption {
-          width: 100%;
-          text-align: center;
-          margin-top: 6px;
-          font-size: .9rem;
-          color: rgba(255,255,229,.9);
-        }
     </style>
 </head>
 <body>
     <div class="game-container">
         <div class="story-text" id="story-text"></div>
-        <div class="cyanotype" id="choice-image-container" aria-hidden="true"></div>
         <div class="choices" id="choices"></div>
     </div>
     <script>
@@ -102,55 +67,30 @@ create images
                 text: "Midway upon the journey of our life, I found myself within a forest dark, for the straightforward pathway had been lost...",
                 choices: [
                     { text: "Yet, at the turn of each passing day, I lay knowing tomorrow, oh, tomorrow; the room, the same.", next: "wall" },
-                    { text: "The hum bekons me. Yes, that hum in the walls, the gadgets, the outlets. The spirit that moves through all things.", next: "hum" }
+                    { text: "The hum bekons me. Yes, that hum in the walls, in the gadgets, in the outlets. The spirit that moves through all things.", next: "hum" }
                 ]
             },
             wall: {
                 text: "It will be sunrise soon. My body can sense it. I'm lucid. so much so I am in competition with the sun. Are these premonitions to the inevitable? This is the start to the rest of my life.",
                 choices: [
-                    { text: "I should get more rest. I only had a few hours of sleep.", next: "insomnia" },
-                    { text: "I made an appointment with my future self.", next: "getready" }
-                ]
-            },
-            insomnia: {
-                text: "Ah, my neck... This always happens to me. I know better, but I can't leave the warmth of my blankets. It's familiar.",
-                choices: [
-                    { text: "My days as days no longer exist. This once-fleeting-moment has turned into my fate. Every day is the same. This is all there is.", next: "decompose" },
-                    { text: "I'll feel better soon. I just need to go about my day.", next: "getready" }
-                ]
-            },
-            decompose: {
-                text: "My mind replays it over, and over, and over, and over, and over-- I've become lower than the honorable plants below. I am not rooted, but wormed. Even the ones within me have surpassed and overtaken me. How unfortunate; to be witness to this repeating casualty of everything.",
-                choices: [
-                    { text: "...", next: "end" }
+                    { text: "Investigate the bushes.", next: "end" }
                 ]
             },
             hum: {
                 text: "This hum, I imagine, is what the plants so low and high feel from the sun. It's scorching, but tender. I too am low, but not quite digging my heals into the earth, like the plants are. How amazing is it to be here as the same moment as them. This is the start to the rest of my life.",
                 choices: [
-                    { text: "I wear my fingers to the bone to reach the crust that smothers me.", next: "getready"}
+                    { text: "Head towards the village.", next: "end" }
                 ]
             },
-            getready: {
-                text: "The 13 should be coming a while from now.",
-                choices: [
-                    { text: "I'll go check on him.", next: "lewis-greet"},
-                    { text: "Hm, I don't want to bother him. He doesn't get the best sleep.", next: "leave-house"}
-                ]
-            },
-            lewis-greet: {
-                text: "Yes! saw him before he was about to get some sleep. Hopefully the breaker doesn't trip, or a package isn't delivered, or no one bothers him. It's always something... I wonder flavor he gave me today.",
-                choices: 
-            }
             end: {
-                text: "My last premonition. These are the same as the pictures in my head of the final destination.",
+                text: "This is what I pictured in my head of the final destination.",
                 choices: [
                     { text: "If I could do everything over, I would.", next: "start" },
                     { text: "Despite everything, I wouldn't change anything.", next: "credits" }
                 ]
             },
             credits: {
-                text: "Straightforward (2025), by Orchid Sylvester. Created as the final project for MSTU 5003 + 5013 Theory of Programming Lecture and Lab at Teacher's College, Columbia University."
+                text: "Straightforward (2025), by Orchid Sylvester. Inspired by my fellowship experience the previous summer at Peters Valley School of Craft. Created as the final project for MSTU 5003 + 5013 Theory of Programming Lecture and Lab at Teacher's College, Columbia University."
             }
         };
 
