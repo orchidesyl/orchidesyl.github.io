@@ -35,28 +35,6 @@ create images
           position: relative;
           width: 100%;
         }
-        /* add to your existing <style> */
-        #choice-image-container {
-          margin: 10px 0 16px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        #choice-image-container img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 6px;
-          box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-          transition: transform .12s ease;
-          cursor: zoom-in;
-        }
-        #choice-image-container .caption {
-          width: 100%;
-          text-align: center;
-          margin-top: 6px;
-          font-size: .9rem;
-          color: rgba(255,255,229,.9);
-        }
         .game-container {
             width: 80%;
             max-width: 600px;
@@ -67,10 +45,12 @@ create images
             text-align: center;
         }
         .story-text {
-            margin-bottom: 20px;        }
+            margin-bottom: 20px;
+        }
         .choices {
             display: flex;
-            flex-direction: column;        }
+            flex-direction: column;
+        }
         .choice-button {
             background-color: inherit;
             color: inherit;
@@ -81,7 +61,8 @@ create images
             cursor: pointer;
         }
         .choice-button:hover {
-            background-color: #243670;        }
+            background-color: #243670;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +90,6 @@ create images
             },
             hum: {
                 text: "This hum, I imagine, is what the plants so low and high feel from the sun. It's scorching, but tender. I too am low, but not quite digging my heals into the earth, like the plants are. How amazing is it to be here as the same moment as them. This is the start to the rest of my life.",
-                // image: { src: "assets/images/stone.jpg", alt: "small stone", caption: "A strange smooth stone." }
                 choices: [
                     { text: "Head towards the village.", next: "end" }
                 ]
@@ -142,22 +122,12 @@ create images
                 button.innerText = choice.text;
                 button.classList.add("choice-button");
                 button.onclick = () => {
-                  // show image if the choice includes one
-                  if (choice.image) {
-                    showChoiceImage(choice.image);
-                    // optionally do not navigate away so player can view the image:
-                    // return; // keep on same node
-                  } else {
-                    hideChoiceImage();
-                  }
-                
-                  // then navigate to next node
-                  currentLocation = choice.next;
-                  updateGame();
-                };
+                    currentLocation = choice.next;
+                    updateGame();
                 };
                 choicesContainer.appendChild(button);
             });
+        }
 
         // Start the game
         updateGame();
