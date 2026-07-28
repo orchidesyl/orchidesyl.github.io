@@ -62,7 +62,7 @@ function searchKey() {
   projectTitle = collection.getElementsById('projectTitle');
 
   // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
+  for (i = 0; i < projectTitle.length; i++) {
     button = projectTitle[i].getElementsByTagName("button")[0];
     txtValue = button.textContent || button.innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
