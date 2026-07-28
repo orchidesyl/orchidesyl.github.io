@@ -225,6 +225,7 @@ p, a, button {
     iframe {
       height: calc(100vh - 124px);
       width: calc(100vw - 385px);
+      border-color: transparent;
     }
   }
 
@@ -262,5 +263,6 @@ p, a, button {
       width: calc(100vw - 33px);
       height: calc(100vh - 282px);
       margin-top: -14px;
+      border-color: transparent;
     }
   }
