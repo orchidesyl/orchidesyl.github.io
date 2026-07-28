@@ -144,21 +144,6 @@ p, a, button {
   font-family: Geist;
 }
 
-.popup {
-  display: none;
-  position: fixed;
-  transition: .3s;
-}
-.popup.show {
-  transition: .3s;
-}
-.close-btn {
-    position: absolute;
-    cursor: pointer;
-    font-size: 36px;
-    font-weight: bold;
-    color: #909924;
-}
 .archivePage{
   /*overflow: hidden;*/
 }
@@ -206,7 +191,7 @@ p, a, button {
       margin: 3px 14px -14px 0px;
     }
     #main {
-      margin: 79.4px 0px 0px 326.6px;
+      margin: 59px 0px 0px 326.6px;
       float: inline-start;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
@@ -245,19 +230,8 @@ p, a, button {
       margin-right: 27px;
     }
     #main {
-      padding-top: 93.4px;
+      padding-top: 59px;
       margin-bottom: 237px;
-    }
-    .windowInfo {
-      padding-top: 93.4px;
-      margin-bottom: 237px;
-    }
-    .popup {
-      margin: 0vw .33vw 0vw .33vw;
-    }
-    .close-btn {
-      top: 10px;
-      right: 26px;
     }
     iframe {
       width: calc(100vw - 33px);
