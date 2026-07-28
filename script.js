@@ -1,5 +1,9 @@
 console.log("Hello, world! I'm linked! - Orchid");
 
+function mainGo(url) {
+    document.getElementById('main').src = url;
+}
+
 filterSelection("all");
       function filterSelection(c) {
         var x, i;
@@ -47,15 +51,15 @@ filterSelection("all");
           this.className += " active";
         });
       }
-      
-      function windowPop(id) {
+  
+function windowPop(id) {
         var popup = document.getElementById(id);
         if (popup.style.display === "block") {
           popup.style.display = "none";
         } else {
           popup.style.display = "block";
         }
-      }
+      }    
       
 function colorMode() {
   var element = document.body;
