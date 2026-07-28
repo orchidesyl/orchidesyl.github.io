@@ -51,16 +51,29 @@ filterSelection("all");
           this.className += " active";
         });
       }
-  
-function windowPop(id) {
-        var popup = document.getElementById(id);
-        if (popup.style.display === "block") {
-          popup.style.display = "none";
-        } else {
-          popup.style.display = "block";
-        }
-      }    
+
+//search by keyword
+function searchKey() {
+  // Declare variables
+  var input, filter, button, collection, projectTitle, i, txtValue;
+  input = document.getElementById('searchBox');
+  filter = input.value.toUpperCase();
+  collection = document.getElementById("collection");
+  projectTitle = collection.getElementsById('projectTitle');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    button = projectTitle[i].getElementsByTagName("button")[0];
+    txtValue = button.textContent || button.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      projectTitle[i].style.display = "";
+    } else {
+      projectTitle[i].style.display = "none";
+    }
+  }
+}
       
+//change color scheme
 function colorMode() {
   var element = document.body;
   element.classList.toggle("color-mode");
