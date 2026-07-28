@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+    <div class="section navMenu" id="nav">
+        <div id="menuCategories">
+      <details>
+      <summary class="button" style="font-size: 22px;">COLLECTION</summary>
+        <div class="archivePage" id="navButtons">
+          <!--Alphabetical Order-->
+          <button class="button filterDiv design illustration 2D" onclick="windowPop('windowFrameAtlas-Odyssey')">Atlas' Odyssey</button>
+          <button class="button filterDiv design fabrication 3D" onclick="windowPop('windowFrameBichos')">Bichos</button>
+          <button class="button filterDiv illustration 2D" onclick="windowPop('windowFrameEarlyWorks')">Early Works (2016 - 2020)</button>
+          <button class="button filterDiv design fabrication 2D" onclick="windowPop('windowFrameFestering')">Festering (House as Book)</button>
+          <button class="button filterDiv design 2D" onclick="windowPop('windowFrameHands')">Hands (Body as Book)</button>
+          <button class="button filterDiv design fabrication 3D" onclick="windowPop('windowFrameHumanBehavior')">Human Behavior</button>
+          <button class="button filterDiv design 4D" onclick="windowPop('windowFrameIDS')">Intra-Disciplinary Seminar Fall 2022</button>
+          <button class="button filterDiv design fabrication illustration 2D" onclick="windowPop('windowFrameMalice')">Malice (House as Book)</button>
+        </div>
+      </details>
+      <br>
+      <!-- Filter Buttons -->
+      <details>
+        <summary class="button" style="font-size: 22px;">MENU</summary>
+        <section id="navButtons">
+          <button class="button" onclick="filterSelection('design')">Design</button>
+          <button class="button" onclick="filterSelection('illustration')">Illustration</button>
+          <button class="button" onclick="filterSelection('fabrication')">Fabrication</button>
+          <div id="dimmension">
+            <button class="button" onclick="filterSelection('2D')">2D</button>
+            <button class="button" onclick="filterSelection('3D')">3D</button>
+            <button class="button" onclick="filterSelection('4D')">4D</button>
+          </div>
+          <button class="button actve" onclick="filterSelection('all')">All</button>
+        </section>
+      </details>
+        </div>
+    <div id="foot-all">
+        <div id="updates">
+        </div>
+    </div>
+    <div>
+        <img onclick="windowPop('windowFrameColophon')" id="colophon" class="icons" src="assets/graphics/flower.svg">
+        <section id="footer">
+        <span><button class="link"><a onclick="windowPop('windowFrameResume')">Resume</a>; <a  onclick="windowPop('windowFrameCV')">CV</a></button></span>
+        <br>
+        <span><button class="link"><a href="mailto:hello@orchidesyl.com">E-Mail</a></button></span>
+      </div>
+    <script src="script.js"></script>
+    </body>
+</html>
