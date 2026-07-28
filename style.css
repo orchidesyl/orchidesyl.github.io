@@ -71,7 +71,7 @@ body {
 }
 #navButtons {
   display: grid;
-  padding: 14px;
+  padding: 0px 14px 0px 14px;
 }
 #footer {
   font-style: italic;
@@ -126,6 +126,9 @@ button {
   all: unset;
   width: fit-content;
   font-size: 22px;
+}
+.projTitle {
+  font-size: 18px;
 }
 .filterDiv {
   display: none;
