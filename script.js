@@ -52,19 +52,18 @@ filterSelection("all");
         });
       }
 
-//search by keyword
+//search by keyword and button text
 function searchKey() {
-    const input = document.getElementById("searchBox");
-    const filter = input.value.toUpperCase();
+    const filter = document.getElementById("searchBox").value.toLowerCase();
+    const buttons = document.querySelectorAll("#collection .projectTitle");
 
-    const projectTitles = document.querySelectorAll("#collection .projectTitle");
+    buttons.forEach(button => {
+        const text = button.textContent.toLowerCase();
+        const keywords = (button.dataset.keywords || "").toLowerCase();
 
-    projectTitles.forEach(button => {
-        const txtValue = button.textContent || button.innerText;
+        const searchable = `${text} ${keywords}`;
 
-        button.style.display = txtValue.toUpperCase().includes(filter)
-            ? ""
-            : "none";
+        button.style.display = searchable.includes(filter) ? "" : "none";
     });
 }
       
