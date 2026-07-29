@@ -54,22 +54,18 @@ filterSelection("all");
 
 //search by keyword
 function searchKey() {
-  // Declare variables
-  var input, filter, collection, projectTitle, a, i, txtValue;
-  const input = document.getElementById("searchBox");
-  const filter = input.value.toUpperCase();
-  const collection = document.getElementById("collection");
-  const projectTitle = collection.querySelectorAll("projectTitle");
+    const input = document.getElementById("searchBox");
+    const filter = input.value.toUpperCase();
 
-  // Loop through all list items, and hide those who don't match the search query
-  const projectTitles = collection.getElementsByClassName("projectTitle");
+    const projectTitles = document.querySelectorAll("#collection .projectTitle");
 
-    for (let i = 0; i < projectTitles.length; i++) {
-    const button = projectTitles[i].getElementsByTagName("button")[0];
-    const txtValue = button.textContent || button.innerText;
+    projectTitles.forEach(button => {
+        const txtValue = button.textContent || button.innerText;
 
-    projectTitles[i].style.display =
-        txtValue.toUpperCase().includes(filter) ? "" : "none";
+        button.style.display = txtValue.toUpperCase().includes(filter)
+            ? ""
+            : "none";
+    });
 }
       
 //change color scheme
