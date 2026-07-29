@@ -73,6 +73,10 @@ body {
   display: grid;
   padding: 0px 14px 0px 14px;
 }
+#searchBox {
+  border: 1px;
+  color: #120308;
+}
 #footer {
   font-style: italic;
 }
@@ -127,7 +131,7 @@ button {
   width: fit-content;
   font-size: 22px;
 }
-.projTitle {
+.projectTitle {
   font-size: 18px;
 }
 .filterDiv {
