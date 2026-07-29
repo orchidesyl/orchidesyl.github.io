@@ -55,7 +55,7 @@ filterSelection("all");
 //search by keyword
 function searchKey() {
   // Declare variables
-  var input, filter, button, collection, projectTitle, i, txtValue;
+  var input, filter, collection, projectTitle, a, i, txtValue;
   input = document.getElementById('searchBox');
   filter = input.value.toUpperCase();
   collection = document.getElementById("collection");
