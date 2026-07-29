@@ -59,7 +59,7 @@ function searchKey() {
   input = document.getElementById('searchBox');
   filter = input.value.toUpperCase();
   collection = document.getElementById("collection");
-  projectTitle = collection.getElementsById('projectTitle');
+  projectTitle = collection.getElementById('projectTitle');
 
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < projectTitle.length; i++) {
