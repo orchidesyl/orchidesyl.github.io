@@ -4,6 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+        <script type="text/javascript">
+        window.onload = function() {
+            if (parent) {
+                var oHead = document.getElementsByTagName("head")[0];
+                var arrStyleSheets = parent.document.getElementsByTagName("style");
+                for (var i = 0; i < arrStyleSheets.length; i++)
+                    oHead.appendChild(arrStyleSheets[i].cloneNode(true));
+            }
+        }
+        </script>
+</head>
+
     </head>
     <body>
         <h5><em>Hello, I'm Orchid</em>, a maker of things. By day, I'm a teacher and practitioner of visual arts, but by night I create, develop, and experiment with various projects in various media. Having the discipline and desire to challenge onself creatively is part of my ethos as artist and educator, evident in my selected works and collection.</h5>
