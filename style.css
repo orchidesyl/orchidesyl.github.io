@@ -84,6 +84,7 @@ body {
 }
 #footer {
   font-style: italic;
+  display: grid;
 }
 #colophon {
   float: right;
@@ -187,7 +188,6 @@ p, a, button {
       overflow: auto;
     }
     #footer {
-      display: grid;
       margin-bottom: -57px;
     }
     #img-LCap {
