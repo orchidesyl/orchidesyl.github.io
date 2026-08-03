@@ -4,23 +4,29 @@ console.log("Hello, world! I'm linked! - Orchid");
   function mainGo(page) {
   document.getElementById("main").src = page;
 
-  const url = new URL(window.location);
-  url.pathname = page;
-  history.pushState({}, "", url);
+  const hash = page.replace(/\.html$/, "");
+  location.hash = hash;
 }
 
 //correct page on refresh
-        window.addEventListener("DOMContentLoaded", () => {
-  const page = window.location.pathname.replace(/^\//, "") || "main.html";
+  window.addEventListener("DOMContentLoaded", () => {
+  const page = location.hash
+    ? location.hash.substring(1) + ".html"
+    : "main.html";
+
   document.getElementById("main").src = page;
 });
 
 //navigation button work
-        window.addEventListener("popstate", () => {
-  const page = window.location.pathname.replace(/^\//, "") || "main.html";
+  window.addEventListener("hashchange", () => {
+  const page = location.hash
+    ? location.hash.substring(1) + ".html"
+    : "main.html";
+
   document.getElementById("main").src = page;
 });
 
+//menu sort 
 filterSelection("all");
       function filterSelection(c) {
         var x, i;
