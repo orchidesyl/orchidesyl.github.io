@@ -101,7 +101,7 @@ button>img {
 }
 button:hover>img {
   display: block;
-  width: 314px;
+  width: 100%;
 }
 .thumbnail {
   float: initial;
