@@ -1,8 +1,32 @@
 console.log("Hello, world! I'm linked! - Orchid");
 
-function mainGo(url) {
-    document.getElementById('main').src = url;
-}
+//update url with iframe select
+      function mainGo(page) {
+        document.getElementById("main").src = page;
+      
+        // Update the browser URL without reloading
+        const url = new URL(window.location);
+        url.searchParams.set("page", page);
+        history.pushState({}, "", url);
+      }
+        
+//correct page on refresh
+        window.addEventListener("DOMContentLoaded", () => {
+          const params = new URLSearchParams(window.location.search);
+          const page = params.get("page");
+        
+          if (page) {
+            document.getElementById("main").src = page;
+          }
+        });
+
+//navigation button work
+        window.addEventListener("popstate", () => {
+          const page =
+            new URLSearchParams(window.location.search).get("page") || "main.html";
+        
+          document.getElementById("main").src = page;
+        });
 
 filterSelection("all");
       function filterSelection(c) {
