@@ -1,32 +1,25 @@
 console.log("Hello, world! I'm linked! - Orchid");
 
 //update url with iframe select
-      function mainGo(page) {
-        document.getElementById("main").src = page;
-      
-        // Update the browser URL without reloading
-        const url = new URL(window.location);
-        url.searchParams.set(page);
-        history.pushState({}, url);
-      }
-        
+  function mainGo(page) {
+  document.getElementById("main").src = page;
+
+  const url = new URL(window.location);
+  url.pathname = page;
+  history.pushState({}, "", url);
+}
+
 //correct page on refresh
         window.addEventListener("DOMContentLoaded", () => {
-          const params = new URLSearchParams(window.location.search);
-          const page = params.get("page");
-        
-          if (page) {
-            document.getElementById("main").src = page;
-          }
-        });
+  const page = window.location.pathname.replace(/^\//, "") || "main.html";
+  document.getElementById("main").src = page;
+});
 
 //navigation button work
         window.addEventListener("popstate", () => {
-          const page =
-            new URLSearchParams(window.location.search).get("page") || "main.html";
-        
-          document.getElementById("main").src = page;
-        });
+  const page = window.location.pathname.replace(/^\//, "") || "main.html";
+  document.getElementById("main").src = page;
+});
 
 filterSelection("all");
       function filterSelection(c) {
