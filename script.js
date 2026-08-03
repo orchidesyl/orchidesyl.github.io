@@ -6,8 +6,8 @@ console.log("Hello, world! I'm linked! - Orchid");
       
         // Update the browser URL without reloading
         const url = new URL(window.location);
-        url.searchParams.set("page", page);
-        history.pushState({}, "", url);
+        url.searchParams.set(page);
+        history.pushState({}, url);
       }
         
 //correct page on refresh
