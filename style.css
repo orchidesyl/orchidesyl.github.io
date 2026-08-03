@@ -96,6 +96,13 @@ body {
   padding: 14px;
   overflow: hidden;
 }
+button>img {
+  display: none;
+}
+button:hover>img {
+  display: block;
+  width: 314px;
+}
 .thumbnail {
   float: initial;
   width: 100%;
